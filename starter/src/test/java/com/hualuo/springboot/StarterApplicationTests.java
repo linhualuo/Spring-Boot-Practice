@@ -1,4 +1,4 @@
-package com.hualuo.starter;
+package com.hualuo.springboot;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
