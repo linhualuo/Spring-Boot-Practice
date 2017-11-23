@@ -16,32 +16,32 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 控制器
+ * 控制器, 现在暂时无用了
  *
  * @author Joseph
  * @create 2017/11/20 16:33
  */
-@Controller
+//@Controller
 public class TwitterController {
 
-    @Autowired
+/*    @Autowired
     private Twitter twitter;
 
-    /**
+    *//**
      * 跳转到搜索页面
      * @return
-     */
+     *//*
     @RequestMapping("/")
     public String home() {
         return "searchPage";
     }
 
-    /**
+    *//**
      * 跳转到结果页面
      * @param search
      * @param model
      * @return
-     */
+     *//*
     @RequestMapping("/result")
     public String hello(@RequestParam(defaultValue = "masterSpringMVC4") String search,Model model) {
         SearchResults searchResults = twitter.searchOperations().search(search);
@@ -61,5 +61,5 @@ public class TwitterController {
         }
         redirectAttributes.addAttribute("search", search);
         return "redirect:result";
-    }
+    }*/
 }

@@ -2,9 +2,13 @@ package com.hualuo.master.profile;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.io.Serializable;
+import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +29,8 @@ public class UserProfileSession implements Serializable {
 
     private List<String> tastes = new ArrayList<>();
 
+    private URL picturePath;
+
     public void saveForm(ProfileForm profileForm) {
         this.twitterHandle = profileForm.getTwitterHandle();
         this.email = profileForm.getEmail();
@@ -39,5 +45,21 @@ public class UserProfileSession implements Serializable {
         profileForm.setBirthDate(this.birthDate);
         profileForm.setTastes(this.tastes);
         return profileForm;
+    }
+
+    public void setPicturePath(Resource picturePath) throws IOException {
+        this.picturePath = picturePath.getURL();
+    }
+
+    public Resource getPicturePath() {
+        return picturePath == null ? null : new UrlResource(picturePath);
+    }
+
+    public List<String> getTastes() {
+        return tastes;
+    }
+
+    public void setTastes(List<String> tastes) {
+        this.tastes = tastes;
     }
 }
