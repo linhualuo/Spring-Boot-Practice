@@ -30,7 +30,10 @@ dependencies {
     compile('org.webjars:jquery:3.2.1')
     compile('org.webjars:materializecss:0.96.0')
     compile('org.springframework.boot:spring-boot-configuration-processor')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310')
+    compile('com.fasterxml.jackson.module:jackson-module-parameter-names')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jdk8')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 compileJava.dependsOn(processResources)
