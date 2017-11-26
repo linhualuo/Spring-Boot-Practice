@@ -80,6 +80,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
     public void configurePathMatch(PathMatchConfigurer configurer) {
         UrlPathHelper urlPathHelper = new UrlPathHelper();
         urlPathHelper.setRemoveSemicolonContent(false);
+        configurer.setUseRegisteredSuffixPatternMatch(true);
         configurer.setUrlPathHelper(urlPathHelper);
     }
 
